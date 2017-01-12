@@ -244,7 +244,7 @@ ccnet_decrypt (char **data_out,
                const char *code,
                const int code_len);
 
-
+#if !defined(__NetBSD__)
 /*
  * Utility functions for converting data to/from network byte order.
  */
@@ -266,6 +266,7 @@ bswap64 (uint64_t val)
 
     return ret;
 }
+#endif
 
 static inline uint64_t
 hton64(uint64_t val)
